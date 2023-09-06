@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About us</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">About us</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="{{ url_for('landing') }}">Get involved</a></li>
+							<li><a href="https://donate.stripe.com/test_cN215EdlI6uzg4o144" target="_blank" rel="noopener noreferrer">Donate</a></li>
+							<li class="active"><a href="{{ url_for('about_us') }}">About us</a></li>
+							<li><a href="{{ url_for('get_contact_page') }}">Contact us</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<div class="image main"><img src="{{ url_for('static', filename='images/PXL_20221225_225239861.jpg') }}" alt="Picture of the Ventura pier beach" /></div>
+								<p>Welcome to the Ventura County Resource Center where we are putting vital, tangible and essential resources back in the hands of our community and Ventura county. Established by faith based organizations, churches and ministries throughout Ventura County, we aim to impact our well diverse multicultural family by providing our community with superior knowledge on how to sustain themselves during family, financial, emotional and mental crises, as well as providing resources through recession, gentrification and cost of living increases.</p>
+								<p> With the physical and overwhelming support from our partners in the faith based organizations and community, our community center will help promote stability in many areas such as health, wellness and community support.</p>
+								<p> “We look forward to supporting you and your family at the Ventura County Resource Center.” - Bishop Lamant Hayes, a Director at the VC Resource Center.</p>
+							</section>
+
+					</div>
+			</div>
+		{% include "footer.html" %}
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About us</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">Contact us</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="{{ url_for('landing') }}">Get involved</a></li>
+							<li><a href="https://donate.stripe.com/test_cN215EdlI6uzg4o144" target="_blank" rel="noopener noreferrer">Donate</a></li>
+							<li><a href="{{ url_for('about_us') }}">About us</a></li>
+							<li class="active"><a href="{{ url_for('get_contact_page') }}">Contact us</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<h2>Contact Form</h2>
+								<p>Get in touch with us! Let us know about any events you want posted on this website, if you want to volunteer, become a vendor at an event or even if you just want to let us know how we're doing! Any and all forms of communication are welcome.</p>
+									<form method="post" action="submit">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="contact-name" id="contact-name" value="" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="contact-email" id="contact-email" value="" placeholder="Email" />
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<select name="category" id="category">
+													<option value="">- Category -</option>
+													<option value="1">Volunteering</option>
+													<option value="1">Vendor</option>
+													<option value="1">Event</option>
+													<option value="1">Feedback</option>
+												</select>
+											</div>
+
+											<!-- Break -->
+											<div class="col-12">
+												<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" class="primary" /></li>
+												</ul>
+                                                <p>Your message has been sent. We will get back to you as soon as possible.</p>
+											</div>
+										</div>
+									</form>
+
+									<hr />
+					</div>
+			</div>
+		{% include "footer.html" %}
+	</body>
+</html>
