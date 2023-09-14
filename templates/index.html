@@ -54,10 +54,10 @@
 										<span class="date">{{ event.pretty_date }}</span>
 										<h2> {{ event.title }}</h2>
 									</header>
-									<a class="image fit"><img src="{{ url_for('static', filename='images/Spark_of_Love.jpg') }}" alt="{{ event.alt }}" /></a>
+									<a class="image fit"><img src="{{ url_for('static', filename=event.image) }}" alt="{{ event.alt }}" /></a>
 									<p>{{ event.content_body }}</p>
 									<ul class="actions special">
-										<li><a href="{{ url_for('get_contact_page') }}" class="button">Volunteer</a></li>
+										<li><a href="{{ url_for('get_full_post', id_num=event.id) }}" class="button">Full Post</a></li>
 									</ul>
 								</article>
 							{% endif %}

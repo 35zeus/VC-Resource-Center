@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request
 from datetime import date, datetime
 from smtplib import SMTP
 import os
@@ -10,6 +10,7 @@ application.secret_key = os.urandom(12).hex()
 
 year = date.today().year
 today = date.today()
+events_json = requests.get('https://api.npoint.io/a0fbacdbf8f5e6a731a3').json()
 
 load_dotenv()
 
@@ -26,13 +27,12 @@ def email_message(name, contact_email, body='New Sign up for the newsletter', ca
             to_addrs=recipient_email,
             msg=f'Subject:Contact Form Submission\n\nFrom: {name} at {contact_email}\n'
                 f'Category: {category}\n'
-                f'Message: {body}'
+                f'Message: {body}',
         )
 
 
 @application.route('/')
 def landing():
-    events_json = requests.get('https://api.npoint.io/a0fbacdbf8f5e6a731a3').json()
     for x in range(len(events_json)):
         my_date = events_json[x]["date"]
         date_object = datetime.strptime(my_date, '%Y-%m-%d').date()
@@ -72,8 +72,17 @@ def newsletter_signup():
         name = request.form['name']
         email = request.form['email']
         email_message(name, email)
-        flash("You have successfully signed up for our email newsletter.")
     return render_template('redirect.html')
+
+
+@application.route('/post')
+def get_full_post():
+    id_num = int(request.args["id_num"])
+    post_data: dict = {}
+    for post in events_json:
+        if id_num == post["id"]:
+            post_data = post
+    return render_template('full-post.html', post_data=post_data)
 
 
 if __name__ == "__main__":
