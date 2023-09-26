@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from datetime import date, datetime
 from smtplib import SMTP
 import os
@@ -16,10 +16,14 @@ load_dotenv()
 
 # The following function takes env variables of the moderators email credentials, formats an email to the correct
 # recipient and sends the email.
-def email_message(name, contact_email, body='New Sign up for the newsletter', category='Newsletter'):
+def email_message(
+        name, contact_email,
+        body='New Sign up for the newsletter',
+        category='Newsletter',
+        recipient_email=os.environ.get('RECIPIENT_EMAIL')
+):
     sending_email = os.environ.get('MOD_EMAIL')
     sending_password = os.environ.get('MOD_EMAIL_PASSWORD')
-    recipient_email = os.environ.get('RECIPIENT_EMAIL')
     with SMTP('smtp.gmail.com') as connection:
         connection.starttls()
         connection.login(user=sending_email, password=sending_password)
@@ -56,7 +60,7 @@ def get_contact_page():
 # Adds string stating the contact form sending was successful (since I don't know JS yet)
 @application.route('/contact-success')
 def get_contact_success_page():
-    return render_template('contact-success.html')
+    return render_template('contact-success.html', current_year=year)
 
 
 # Takes in contact form data from contact.html to send to administrator's email
@@ -68,18 +72,20 @@ def get_form_sent():
         category = request.form['category']
         message = request.form['message']
         email_message(contact_name, contact_email, message, category)
+        email_message(contact_name, contact_email, message, category, recipient_email="mod.vcresourcecenter@gmail.com")
     return application.redirect('/contact-success')
 
 
 # a route for the footer on any html page to go to in order to send a notification that someone has signed up for the
 # newsletter.
-@application.route('/sign-up', methods=['POST', 'GET'])
+@application.route('/sign-up', methods=['POST'])
 def newsletter_signup():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        email_message(name, email)
-    return render_template('index.html')
+    name = request.form['name']
+    email = request.form['email']
+    email_message(name, email)
+    email_message(name, email, recipient_email="mod.vcresourcecenter@gmail.com")
+    return redirect('/')
+
 
 
 # gets the post selected data and displays it as a full page
@@ -92,6 +98,11 @@ def get_full_post():
         if id_num == post["id"]:
             post_data = post
     return render_template('full-post.html', post_data=post_data, current_year=year)
+
+
+@application.route('/donate')
+def get_donation_page():
+    return render_template('donations.html', current_year=year)
 
 
 if __name__ == "__main__":

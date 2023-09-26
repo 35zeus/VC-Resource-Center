@@ -1,71 +1,26 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>VC Resource Center</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
-		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
-	</head>
-	<body class="is-preload">
+{% extends "base.html" %}
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+{% block title %}VC Resource Center{% endblock %}
+{% block header_title %}Get Involved{% endblock %}
+{% block tab1 %}<li class="active">{% endblock %}
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>This is<br />
-						VCRC</h1>
-						<p>Your Ventura County Resource Center. An organization which aims at informing and developing a relationship with the Ventura County
-							Community to create better cities and a better county.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
-				<!-- Header -->
-					<header id="header">
-						<a class="logo">Get involved</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="{{ url_for('landing') }}">Get involved</a></li>
-							<li><a href="https://donate.stripe.com/eVa14TcYR3vw1YAdQQ" target="_blank" rel="noopener noreferrer">Donate</a></li>
-							<li><a href="{{ url_for('about_us') }}">About us</a></li>
-							<li><a href="{{ url_for('get_contact_page') }}">Contact us</a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						{% for event in events %}
-						{% if event.date > today %}
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<span class="date">{{ event.pretty_date }}</span>
-										<h2> {{ event.title }}</h2>
-									</header>
-									<a class="image fit"><img src="{{ url_for('static', filename=event.image) }}" alt="{{ event.alt }}" /></a>
-									<p>{{ event.content_body }}</p>
-									<ul class="actions special">
-										<li><a href="{{ url_for('get_full_post', id_num=event.id) }}" class="button">Full Post</a></li>
-									</ul>
-								</article>
-							{% endif %}
-							{% endfor %}
-							</section>
-					</div>
-
-				</div>
-	{% include "footer.html" %}
-	</body>
-</html>
+{% block content %}
+	{% for event in events %}
+	{% if event.date > today %}
+	<!-- Posts -->
+		<section class="posts">
+			<article>
+				<header>
+					<span class="date">{{ event.pretty_date }}</span>
+					<h2> {{ event.title }}</h2>
+				</header>
+				<a class="image fit"><img src="{{ url_for('static', filename=event.image) }}" alt="{{ event.alt }}" /></a>
+				<p>{{ event.content_body }}</p>
+				<ul class="actions special">
+					<li><a href="{{ url_for('get_full_post', id_num=event.id) }}" class="button">Full Post</a></li>
+				</ul>
+			</article>
+		{% endif %}
+		{% endfor %}
+		</section>
+{% endblock %}
