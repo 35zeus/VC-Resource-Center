@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_from_directory
 from datetime import date, datetime
 from smtplib import SMTP
 import os
 import requests
 from dotenv import load_dotenv
 
-application = Flask(__name__)
+application = Flask(__name__, static_folder='static')
 application.secret_key = os.urandom(12).hex()
 
 year = date.today().year
@@ -36,7 +36,7 @@ def email_message(
         )
 
 
-# renders the landing page with the events data. It will exclude all events that precede the current date.
+# renders the landing page with the event's data. It will exclude all events that precede the current date.
 @application.route('/')
 def landing():
     events_json = requests.get('https://api.npoint.io/a0fbacdbf8f5e6a731a3').json()
@@ -87,7 +87,6 @@ def newsletter_signup():
     return redirect('/')
 
 
-
 # gets the post selected data and displays it as a full page
 @application.route('/post')
 def get_full_post():
@@ -103,6 +102,11 @@ def get_full_post():
 @application.route('/donate')
 def get_donation_page():
     return render_template('donations.html', current_year=year)
+
+
+@application.route('/sitemap.xml')
+def root_files():
+    return send_from_directory(f"{application.static_folder}/root-files", 'sitemap.xml')
 
 
 if __name__ == "__main__":
