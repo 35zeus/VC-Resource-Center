@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83a64e3c-f42b-468f-8f02-5c3ec29d2cee" name="Changes" comment="added sitemap">
+      <change beforePath="$PROJECT_DIR$/.ebignore" beforeDir="false" afterPath="$PROJECT_DIR$/.ebignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vc-resource-center-website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vc-resource-center-website.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/css/noscript.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/noscript.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/breakpoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/breakpoints.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/browser.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/browser.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/jquery.scrollex.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/jquery.scrollex.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/jquery.scrolly.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/jquery.scrolly.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/base/_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/base/_page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/base/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/base/_reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/base/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/base/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_actions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_actions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_box.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_box.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_icon.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_icons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_image.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_row.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_section.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_section.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/components/_table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/components/_table.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_intro.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_intro.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_navPanel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_navPanel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/layout/_wrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/layout/_wrapper.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/libs/_fixed-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/libs/_fixed-grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/libs/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/libs/_functions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/libs/_html-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/libs/_html-grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/libs/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/libs/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/libs/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/libs/_vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/sass/noscript.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/sass/noscript.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/root-files/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static/root-files/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact-success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/donations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/full-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/full-post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="picture_storage_retrieval" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp4c38f73b-9ae5-45be-8f6d-a317f3743a05_version 1.2 (1).zip/application.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2U8dqF1Ep9CxVpj7tktOovLniti" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ben/PycharmProjects/qrcode&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="vc-resource-center-website" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="vc-resource-center-website" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\static\images\Event-12-9-23" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\templates" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\static\images" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\static\root-files" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\static\images\Event-12-9-23" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\static" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website\templates" />
+      <recent name="C:\Users\Ben\PycharmProjects\vc-resource-center-website" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-7a29c1521ef0-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.11799.298" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83a64e3c-f42b-468f-8f02-5c3ec29d2cee" name="Changes" comment="" />
+      <created>1692325330222</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692325330222</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial version of the website">
+      <option name="closed" value="true" />
+      <created>1694043479030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694043479030</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial version of the website">
+      <option name="closed" value="true" />
+      <created>1694049260706</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694049260706</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial version of the website">
+      <option name="closed" value="true" />
+      <created>1694050028608</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694050028608</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial version of the website">
+      <option name="closed" value="true" />
+      <created>1694050811812</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694050811812</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updating requirements file">
+      <option name="closed" value="true" />
+      <created>1694052072731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694052072732</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updating requirements file">
+      <option name="closed" value="true" />
+      <created>1694267380603</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694267380603</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updating requirements file">
+      <option name="closed" value="true" />
+      <created>1694574557720</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694574557720</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Now has full post page instead of individual small posts. Also changed config files for https workings.">
+      <option name="closed" value="true" />
+      <created>1694655659780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694655659780</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added comments and restruct">
+      <option name="closed" value="true" />
+      <created>1695750817268</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695750817268</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added donations page (donations.html)">
+      <option name="closed" value="true" />
+      <created>1695765047188</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695765047188</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added sitemap">
+      <option name="closed" value="true" />
+      <created>1696641027852</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696641027853</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added sitemap">
+      <option name="closed" value="true" />
+      <created>1696646874948</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696646874948</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.config" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Initial version of the website" />
+    <MESSAGE value="Updating requirements file" />
+    <MESSAGE value="Now has full post page instead of individual small posts. Also changed config files for https workings." />
+    <MESSAGE value="Added comments and restruct" />
+    <MESSAGE value="Added donations page (donations.html)" />
+    <MESSAGE value="added sitemap" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sitemap" />
+  </component>
+</project>

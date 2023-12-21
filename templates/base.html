@@ -6,15 +6,27 @@
 -->
 <html>
 	<head>
-        {% block head %}
 		<title>{% block title %}Title{% endblock %}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
 		<link rel="icon" href="{{ url_for('static', filename='images/Event-12-9-23/vcrc_logo.png') }}" type="image/x-icon">
 		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
-        {% endblock %}
+        {% block head %}
+		{% endblock %}
 	</head>
+
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-74K792H1K4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-74K792H1K4');
+	</script>
+
 
     <!-- content -->
     <body class="is-preload">
@@ -42,10 +54,11 @@
 					<nav id="nav">
 						<ul class="links">
                             <!-- the tab blocks are specifically to make it easier to change the class to active -->
-							{% block tab1 %}<li>{% endblock %}<a href="{{ url_for('landing') }}">Get involved</a></li>
-							{% block tab2 %}<li>{% endblock %}<a href="{{ url_for('get_donation_page') }}">Donate</a></li>
-							{% block tab3 %}<li>{% endblock %}<a href="{{ url_for('about_us') }}">About us</a></li>
-							{% block tab4 %}<li>{% endblock %}<a href="{{ url_for('get_contact_page') }}">Contact us</a></li>
+							{% block tab1 %}<li>{% endblock %}<a href="{{ url_for('landing') }}">Home</a></li>
+							{% block tab2 %}<li>{% endblock %}<a href="{{ url_for('events') }}">Events</a></li>
+							{% block tab3 %}<li>{% endblock %}<a href="{{ url_for('get_donation_page') }}">Donate</a></li>
+							{% block tab4 %}<li>{% endblock %}<a href="{{ url_for('about_us') }}">About us</a></li>
+							{% block tab5 %}<li>{% endblock %}<a href="{{ url_for('get_contact_page') }}">Contact us</a></li>
 						</ul>
 					</nav>
             </div>
@@ -103,6 +116,7 @@
 				<!-- Copyright -->
 					<div id="copyright">
 						<ul><li>&copy; {{current_year}}</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<br><p>Ventura County Resource Center is a Section 501(c) (3) charitable organization, EIN 93-2623616. All donations are deemed tax-deductible absent any limitations on deductibility applicable to a particular taxpayer. No goods or services were provided in exchange for your contribution.</p>
 					</div>
     {% endblock %}
     {% block scripts %}
