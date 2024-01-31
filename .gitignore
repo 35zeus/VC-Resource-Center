@@ -3,3 +3,10 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+!.gitignore
+./__pycache__
+!.ebignore
+!.env
+sponsor-tracks.csv
+.env
+venv
