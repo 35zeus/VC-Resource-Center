@@ -1,51 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}VC Resource Center{% endblock %}
-{% block head %}
-<style>
-	.blog-card {
-		width: 30%;
-		margin: 10px;
-		padding: 15px;
-		border: 1px solid #ccc;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
-	.sponsors {
-		height: 150px;
-		width: 150px;
-	}
-
-	.small-icon {
-		height: 300px;
-		width: 300px;
-	}
-
-	.long-icon {
-		height: 150px;
-		width: 300px;
-		}
-</style>
-{% endblock %}
 {% block header_title %}Home{% endblock %}
 {% block tab1 %}<li class="active">{% endblock %}
 
 {% block content %}
 	<div>
 		<h2>Thank you to our sponsors!</h2>
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/99_3_Radio.jpg">
-		<img class="long-icon" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/All_Saints_Episcopal_Church_Logo.png">
-		<img src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/Bethel_AME_logo_new.png">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/Logo+-+HDFC.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/New_Progressive_Church_Logo.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/CGLaw-Logo.png">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/faith_mission_logo.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/grace_life_logo.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/new_directions_logo.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/oxnard_family_circle_logo.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/zion_logo.jpg">
-		<img class="sponsors" src="https://elasticbeanstalk-us-west-1-124449841478.s3.us-west-1.amazonaws.com/website-pictures/Sponsors/miracle_center_logo.jpg">
-
+		<div class="sponsor-container" id="sponsorContainer"></div>
 	</div>
 	<div>
         <h2>Events</h2>

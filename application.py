@@ -1,22 +1,23 @@
-from flask import Flask, render_template, request, redirect, send_from_directory, session, abort
-from datetime import date
+from flask import (
+    Flask, render_template, request, redirect, send_from_directory, session, abort, url_for,
+    jsonify
+)
+from datetime import date, datetime
 from werkzeug.security import check_password_hash
-from extensions import (db, mod_email, app_secretkey)
+from extensions import (db, mod_email, app_secretkey, ckeditor, BUCKET, links)
 from functools import wraps
-from utils import email_message
-
+from utils import email_message, add_event_post, upload_file_to_s3
 
 application = Flask(__name__, static_folder='static')
 application.secret_key = app_secretkey
+ckeditor.init_app(application)
 
 
 def admin_required(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
-        if session["admin"]:
-            return func(*args, **kwargs)
-        else:
-            return abort(403)
+        return func(*args, **kwargs) if session["admin"] else abort(403)
+
     return decorated_view
 
 
@@ -28,13 +29,25 @@ def landing():
 
 @application.route('/events')
 def events():
-    return render_template("index.html", current_year=date.today().year,  events=db.events.find(), today=date.today())
+    return render_template("index.html", current_year=date.today().year, events=db.events.find(), today=date.today())
 
 
 @application.route('/add-event', methods=["GET", "POST"])
-@admin_required
 def add_event():
-    return "Hello"
+    if request.method == "POST":
+        # last_post_id = list(db.events.find().sort([('timestamp', -1)]).limit(1))[0]["post_id"]
+        form_data = request.form.to_dict()
+        print(form_data)
+        upload_file_to_s3(form_data["post-image"],
+                          bucket_name=BUCKET,
+                          key_name="website-pictures/{form_data['post-image']}",
+                          region_name="us-west-1")
+
+        # add_event_post(db, form_data, last_post_id)
+
+        return redirect(url_for('events'))
+
+    return render_template('add_post.html')
 
 
 # gets the post selected data and displays it as a full page
@@ -69,6 +82,11 @@ def newsletter_signup():
     return redirect('/')
 
 
+@application.route('/sponsors')
+def sponsors_page():
+    return render_template('sponsors-page.html')
+
+
 @application.route('/about-us')
 def about_us():
     return render_template("about.html", current_year=date.today().year)
@@ -96,6 +114,26 @@ def get_form_sent():
         email_message(contact_name, contact_email, message, category)
         email_message(contact_name, contact_email, message, category, to_email=mod_email)
     return application.redirect('/contact-success')
+
+
+@application.get('/sponsors-tracking')
+def sponsors_tracking():
+    href = links[request.args["name"]]
+    with open('sponsor-tracks.csv', 'a') as file:
+        file.write(f'{datetime.now()},{request.args["name"]}\n')
+    return redirect(href)
+
+
+@admin_required
+@application.get('/backup')
+def backup_stored_data():
+    response = upload_file_to_s3(
+        file_path='sponsor-tracks.csv',
+        bucket_name=BUCKET,
+        key_name=f'sponsor-tracking/{datetime.now().strftime("%Y-%m")}.csv',
+        region_name='us-west-1'
+    )
+    return jsonify({"response": response})
 
 
 @application.route('/sitemap.xml')
