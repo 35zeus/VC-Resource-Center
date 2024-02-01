@@ -10,3 +10,9 @@
 sponsor-tracks.csv
 .env
 venv
+/.idea/.gitignore
+/.idea/aws.xml
+/.idea/misc.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
