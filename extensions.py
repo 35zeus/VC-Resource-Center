@@ -1,9 +1,8 @@
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 import os
-import certifi
 
-ca = certifi.where()
 load_dotenv()
 mod_email_password = os.getenv('MOD_EMAIL_PASSWORD')
 mod_email = os.getenv('MOD_EMAIL')
@@ -11,7 +10,7 @@ recipient_email = os.getenv('RECIPIENT_EMAIL')
 app_secretkey = os.getenv('APP_SECRET_KEY')
 BUCKET = os.getenv("S3_BUCKET")
 
-client = MongoClient(os.getenv('MONGODB_URI'), tlsCAFile=certifi.where())
+client = MongoClient(os.getenv('MONGODB_URI'), server_api=ServerApi('1'))
 db = client.event_posts
 links = {
         "99.3 Radio": "https://99threefm.com/",
