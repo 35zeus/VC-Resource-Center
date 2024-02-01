@@ -5,20 +5,15 @@ from flask import (
 from datetime import date, datetime
 from werkzeug.security import check_password_hash
 from extensions import (db, mod_email, app_secretkey, ckeditor, BUCKET, links)
-from functools import wraps
 from utils import email_message, add_event_post, upload_file_to_s3
+from flask_admin import Admin
+from flask_login import LoginManager
+from views import UserView
+
 
 application = Flask(__name__, static_folder='static')
 application.secret_key = app_secretkey
 ckeditor.init_app(application)
-
-
-def admin_required(func):
-    @wraps(func)
-    def decorated_view(*args, **kwargs):
-        return func(*args, **kwargs) if session["admin"] else abort(403)
-
-    return decorated_view
 
 
 # renders the landing page with the event's data. It will exclude all events that precede the current date.
@@ -30,24 +25,6 @@ def landing():
 @application.route('/events')
 def events():
     return render_template("index.html", current_year=date.today().year, events=db.events.find(), today=date.today())
-
-
-@application.route('/add-event', methods=["GET", "POST"])
-def add_event():
-    if request.method == "POST":
-        # last_post_id = list(db.events.find().sort([('timestamp', -1)]).limit(1))[0]["post_id"]
-        form_data = request.form.to_dict()
-        print(form_data)
-        upload_file_to_s3(form_data["post-image"],
-                          bucket_name=BUCKET,
-                          key_name="website-pictures/{form_data['post-image']}",
-                          region_name="us-west-1")
-
-        # add_event_post(db, form_data, last_post_id)
-
-        return redirect(url_for('events'))
-
-    return render_template('add_post.html')
 
 
 # gets the post selected data and displays it as a full page
@@ -124,7 +101,6 @@ def sponsors_tracking():
     return redirect(href)
 
 
-@admin_required
 @application.get('/backup')
 def backup_stored_data():
     response = upload_file_to_s3(
@@ -142,4 +118,6 @@ def root_files():
 
 
 if __name__ == "__main__":
+    admin = Admin(application)
+    admin.add_view(UserView(db['admins']))
     application.run(debug=True)
