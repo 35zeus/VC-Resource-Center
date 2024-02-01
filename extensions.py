@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
 import os
-from flask_ckeditor import CKEditor
 import certifi
 
 ca = certifi.where()
@@ -10,7 +9,6 @@ mod_email_password = os.getenv('MOD_EMAIL_PASSWORD')
 mod_email = os.getenv('MOD_EMAIL')
 recipient_email = os.getenv('RECIPIENT_EMAIL')
 app_secretkey = os.getenv('APP_SECRET_KEY')
-ckeditor = CKEditor()
 BUCKET = os.getenv("S3_BUCKET")
 
 client = MongoClient(os.getenv('MONGODB_URI'), tlsCAFile=certifi.where())
@@ -19,7 +17,7 @@ links = {
         "99.3 Radio": "https://99threefm.com/",
         "All Saints Episcopal Church": "https://www.allsantos.org/",
         "Bethel Oxnard Church": "https://www.facebook.com/betheloxnardchurch/",
-        "HDFC": "https://www.google.com/search?channel=fs&client=ubuntu&q=hdf+center",
+        "HDFC": "https://m.facebook.com/p/His-Dream-Fulfilled-Center-100064865103425/",
         "New Progressive Church": "https://newprogressivechristianbaptistchurch.org/",
         "CG Law": "https://cynthialgonzalezlaw.com/",
         "Faith Mission Christian Fellowship Church": "https://faithmissioncfc.org/index.html",
