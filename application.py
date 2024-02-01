@@ -95,7 +95,11 @@ def get_form_sent():
 @application.get('/sponsors-tracking')
 def sponsors_tracking():
     href = links[request.args["name"]]
-    with open('sponsor-tracks.csv', 'a') as file:
+    with open('sponsor-tracks.csv', 'a+') as file:
+        file.seek(0)
+        if file.readline() != 'timestamp,name\n':
+            file.write('timestamp,name\n')
+        file.seek(0, 2)
         file.write(f'{datetime.now()},{request.args["name"]}\n')
     return redirect(href)
 
