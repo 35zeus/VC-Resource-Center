@@ -5,14 +5,15 @@ from flask import (
 from datetime import date, datetime
 from werkzeug.security import check_password_hash
 from extensions import (db, mod_email, app_secretkey, BUCKET, links)
-from utils import email_message, add_event_post, upload_file_to_s3
+from utils import email_message, add_event_post, upload_file_to_s3, init_login
 from flask_admin import Admin
-from flask_login import LoginManager
 from views import UserView
 
 
 application = Flask(__name__, static_folder='static')
 application.secret_key = app_secretkey
+init_login(application)
+
 
 
 # renders the landing page with the event's data. It will exclude all events that precede the current date.
@@ -121,6 +122,6 @@ def root_files():
 
 
 if __name__ == "__main__":
-    # admin = Admin(application)
-    # admin.add_view(UserView(db['admins']))
+    admin = Admin(application)
+    admin.add_view(UserView(db['admins']))
     application.run(debug=True)

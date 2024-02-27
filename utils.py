@@ -1,7 +1,9 @@
 from smtplib import SMTP
-from extensions import (mod_email_password, mod_email, recipient_email)
+from extensions import (mod_email_password, mod_email, recipient_email, db)
 import datetime
 import boto3
+from flask_login import LoginManager
+from models import User
 
 
 # The following function takes env variables of the moderators email credentials, formats an email to the correct
@@ -56,3 +58,11 @@ def upload_file_to_s3(file_path, bucket_name=None, key_name=None, region_name=No
         return "success"
     except Exception as e:
         return {"failure": e}
+
+def init_login(app):
+    login_manager = LoginManager(app=app)
+
+    @login_manager.user_loader
+    def load_user(username):
+        u = db.admins.find_one({"name": username})
+        return User(username=u['name']) if u else None
