@@ -57,7 +57,7 @@
 		</article>
 		<article>
 			<header><h2>Sponsors</h2></header>
-			<span class="image fit"><img src="{{ url_for('static', filename='images/sponsors/zion_logo.jpeg') }}"/></span>
+			<span class="image fit"><img id="sponsor" src="{{ url_for('static', filename='images/sponsors/zion_logo.jpeg') }}"/></span>
 			<p>We love our sponsors! Please give some love to our amazing sponsors at their respective website.
 			They are how we stay online along with individual donors.</p>
 			<ul class="actions special">
@@ -65,4 +65,7 @@
 			</ul>
 		</article>
 	</section>
+{% block scripts %}
+	<script src="{{ url_for('static', filename='assets/js/home.js') }}"></script>
+{% endblock %}
 {% endblock %}
