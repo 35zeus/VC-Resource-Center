@@ -1,9 +1,36 @@
-from werkzeug.security import check_password_hash
+from extensions import db
+from sqlalchemy import event
+from werkzeug.security import generate_password_hash
+from datetime import datetime as dt
 
 
-class User:
-    def __init__(self, username):
-        self.username = username
+class Post(db.Model):
+    __tablename__ = 'posts'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    pretty_date = db.Column(db.String, nullable=False)
+    content_body = db.Column(db.Text, nullable=False)
+    content_body_post = db.Column(db.Text, nullable=False)
+    image = db.Column(db.Text, nullable=False)
+    alt = db.Column(db.String, nullable=False)
+    hours = db.Column(db.String, nullable=False)
+    address_url = db.Column(db.String, nullable=False)
+    address = db.Column(db.String, nullable=False)
+    vendors_needed = db.Column(db.String, nullable=False)
+    vendor_files = db.Column(db.String, nullable=False, default="images/Event-12-9-23.zip")
+
+    def __repr__(self):
+        return f"Post('{self.title}', '{self.date}')"
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    role = db.Column(db.String)
+    username = db.Column(db.String)
+    password = db.Column(db.String)
+    created = db.Column(db.DateTime, default=dt.now)
+    last_logged_in = db.Column(db.DateTime, default=dt.now)
 
     @property
     def is_authenticated(self):
@@ -24,8 +51,14 @@ class User:
     def __unicode__(self):
         return self.username
 
-    @staticmethod
-    def check_password(password_hash, password):
-        return check_password_hash(password_hash, password)
+
+@event.listens_for(User.password, 'set', retval=True)
+def hash_user_password(target, value, oldvalue, initiator):
+    return generate_password_hash(value) if value != oldvalue else value
 
 
+class SponsorClick(db.Model):
+    __tablename__ = 'sponsor_click'
+    id = db.Column(db.Integer, primary_key=True)
+    sponsor_link = db.Column(db.String)
+    link_clicked = db.Column(db.DateTime, default=dt.now)

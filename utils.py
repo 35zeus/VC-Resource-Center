@@ -49,20 +49,19 @@ def add_event_post(db, form_dict, last_post_id):
     )
 
 
-def upload_file_to_s3(file_path, bucket_name=None, key_name=None, region_name=None):
-    s3 = boto3.resource('s3', region_name=region_name)
-    bucket = s3.Bucket(bucket_name)
+def upload_file_to_s3(file, bucket, key):
 
-    try:
-        bucket.upload_file(Filename=file_path, Key=key_name)
-        return "success"
-    except Exception as e:
-        return {"failure": e}
+    s3_client = boto3.client(service_name='s3', region_name='us-west-1')
+    s3_client.upload_fileobj(file, bucket, key)
+    s3_client.put_object_acl(ACL='public-read', Bucket=bucket, Key=key)
+
+    return f"https://{bucket}.s3.us-west-1.amazonaws.com/{key}"
+
 
 def init_login(app):
     login_manager = LoginManager(app=app)
 
     @login_manager.user_loader
-    def load_user(username):
-        u = db.admins.find_one({"name": username})
-        return User(username=u['name']) if u else None
+    def load_user(user_id):
+        u = User.query.filter_by(id=user_id).first()
+        return User(username=u.username, role=u.role, id=u.id) if u else None

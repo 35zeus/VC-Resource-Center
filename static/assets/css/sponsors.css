@@ -1,0 +1,23 @@
+.sponsor-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Centers vertically */
+    padding: 20px; /* Add padding for space */
+}
+
+.sponsor-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sponsor-container img:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    text-align: center; /* Horizontal align */
+    margin-bottom: 20px; /* Add space below the heading */
+}

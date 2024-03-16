@@ -2,40 +2,67 @@
 
 {% block title %}VC Resource Center{% endblock %}
 {% block header_title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/home.css') }}">
+{% endblock %}
+
 {% block tab1 %}<li class="active">{% endblock %}
 
 {% block content %}
-	<div>
-		<h2>Thank you to our sponsors!</h2>
-		<div class="sponsor-container" id="sponsorContainer"></div>
-	</div>
-	<div>
-        <h2>Events</h2>
-            {% set i = 0 %}
+	<article class="post featured">
+		<header class="major">
+			<h2>Making a Difference</h2>
+			<p>Step into the Ventura County Resource Center, your go-to hub where
+					compassion meets action. Here, we're not just about offering a
+					helping hand; we're the bridge that connects those with generous
+					hearts to those in need across Ventura County. Think of us as the
+					matchmakers of goodwill, bringing together suppliers and receivers
+					to ensure no one in our community goes without essentials like food,
+					shelter, and vital resources. Dive into our website and discover
+					how you can play a part in this meaningful journey, making a tangible
+					difference and spreading hope throughout Ventura County.</p>
+		</header>
+		<span class="image main"><img src="{{ url_for('static', filename='images/boxing-food.jpg') }}"></span>
+	</article>
             <!-- Posts -->
-		      <section class="posts">
-				  {% for event in events %}
-                  {% if i <= 2 %}
-			    <article class="blog-card">
-				  <header>
-					  <span class="date">{{ event.pretty_date }}</span>
-					  <h4> {{ event.title }}</h4>
-				  </header>
-				  <a><img class="image fit" style="height:305px;" src="{{ event.image }}" alt="{{ event.alt }}" /></a>
-				  <p>{{ event.content_body }}</p>
-				  <ul class="actions special">
-					<li><a href="{{ url_for('get_full_post', id_num=event.post_id) }}" class="button">Full Post</a></li>
-				  </ul>
-			    </article>
-                  {% set i = i + 1 %}
-		{% endif %}
-		{% endfor %}
-		     </section>
-    </div> <hr>
-    <div>
-        <h3>Consider donating</h3>
-        <h4>If you appreciate our efforts to better unite our community, please donate
-        to keep our organization going.</h4>
+	<section class="posts">
+		<article>
+			<header><h2>Events</h2></header>
+			<span class="image fit"><img src="{{ url_for('static', filename='images/vm-food-drive.jpg') }}"/></span>
+			<p>Please be sure to check out all of our promoted upcoming events. We have
+				events all of Ventura County.
+			</p>
+			<ul class="actions special">
+				<li><a href="{{ url_for('events') }}" class="button">Go to events</a></li>
+			</ul>
+		</article>
 
-    </div>
+		<article>
+			<header><h2>Donate</h2></header>
+			<span class="image fit"><img src="{{ url_for('static', filename='images/change-in-hand.jpg') }}"/></span>
+			<p>Please feel free to donate to our organization to allow us to continue our work!</p>
+			<ul class="actions special">
+				<li><a href="{{ url_for('get_donation_page') }}" class="button">Donate today</a></li>
+			</ul>
+		</article>
+		<article>
+			<header><h2>Volunteer</h2></header>
+			<span class="image fit"><img src="{{ url_for('static', filename='images/moving-boxes-off-truck.jpg') }}"/></span>
+			<p>We want you! We have many volunteer opportunities and we would love to have your help
+			If everyone gives a hand we can really make a difference in our community!</p>
+			<ul class="actions special">
+				<li><a href="{{ url_for('get_contact_page') }}" class="button">Volunteer here</a></li>
+			</ul>
+		</article>
+		<article>
+			<header><h2>Sponsors</h2></header>
+			<span class="image fit"><img src="{{ url_for('static', filename='images/sponsors/zion_logo.jpeg') }}"/></span>
+			<p>We love our sponsors! Please give some love to our amazing sponsors at their respective website.
+			They are how we stay online along with individual donors.</p>
+			<ul class="actions special">
+				<li><a href="{{ url_for('sponsors_page') }}" class="button">See our sponsors</a></li>
+			</ul>
+		</article>
+	</section>
 {% endblock %}

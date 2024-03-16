@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Sponsors{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/sponsors.css') }}" />
+{% endblock %}
+
+{% block tab6 %}<li class="active">{% endblock %}
+
+{% block header_title %}Sponsors{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Thank you to our sponsors!</h2>
+    <div id="sponsorContainer" class="sponsor-container">
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/js/sponsors.js') }}"></script>
+{% endblock %}

@@ -6,37 +6,40 @@
 
 {% block content %}
 		<!-- Post -->
-			<h2>Contact Form</h2>
-				<p>Get in touch with us! Let us know about any events you want posted on this website, if you want to volunteer, become a vendor at an event or even if you just want to let us know how we're doing! Any and all forms of communication are welcome.</p>
-					<form method="post" action="submit">
-						<div class="row gtr-uniform">
-							<div class="col-6 col-12-xsmall">
-								<input type="text" name="contact-name" id="contact-name" value="" placeholder="Name" />
-							</div>
-							<div class="col-6 col-12-xsmall">
-								<input type="email" name="contact-email" id="contact-email" value="" placeholder="Email" />
-							</div>
+	<section class="post">
+		<h2>Contact Form</h2>
+			<p>Get in touch with us! Let us know about any events you want posted on this website, if you want to volunteer, become a vendor at an event or even if you just want to let us know how we're doing! Any and all forms of communication are welcome.</p>
+				<form method="post" action="submit">
+					<div class="row gtr-uniform">
+						<div class="col-6 col-12-xsmall">
+							<input type="text" name="contact-name" id="contact-name" value="" placeholder="Name" />
+						</div>
+						<div class="col-6 col-12-xsmall">
+							<input type="email" name="contact-email" id="contact-email" value="" placeholder="Email" />
+						</div>
 							<!-- Break -->
-							<div class="col-12">
-								<select name="category" id="category">
-									<option value="">- Category -</option>
-									<option value="1">Volunteering</option>
-									<option value="1">Vendor</option>
-									<option value="1">Event</option>
-									<option value="1">Feedback</option>
-								</select>
-							</div>
+						<div class="col-12">
+							<select name="category" id="category">
+								<option value="">- Category -</option>
+								<option value="1">Volunteering</option>
+								<option value="1">Vendor</option>
+								<option value="1">Event</option>
+								<option value="1">Feedback</option>
+							</select>
+						</div>
 
 							<!-- Break -->
-							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-							</div>
-							<!-- Break -->
-							<div class="col-12">
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="primary" /></li>
-								</ul>
-							</div>
+						<div class="col-12">
+							<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
 						</div>
-					</form>
+							<!-- Break -->
+						<div class="col-12">
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" class="primary" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+	</section>
+
 {% endblock %}
