@@ -1,6 +1,4 @@
-from flask import (
-    Flask, render_template, request, redirect, send_from_directory, session,
-)
+from flask import Flask, render_template, request, redirect, send_from_directory
 from datetime import date
 from extensions import db, mod_email, links
 from utils import email_message, init_login
@@ -21,7 +19,6 @@ with application.app_context():
 # renders the landing page with the event's data. It will exclude all events that precede the current date.
 @application.route('/')
 def landing():
-
     return render_template(
         template_name_or_list="home.html",
         current_year=date.today().year,
