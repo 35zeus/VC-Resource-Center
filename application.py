@@ -132,14 +132,15 @@ def root_files():
     )
 
 
-if __name__ == "__main__":
-    admin = Admin(
+admin = Admin(
         app=application,
         index_view=CustomIndexView()
     )
 
-    admin.add_view(UserView(User, db.session))
-    admin.add_view(EventView(Post, db.session))
-    admin.add_view(ClickView(SponsorClick, db.session))
-    admin.add_view(LogoutView(name='Logout', endpoint='logout'))
+admin.add_view(UserView(User, db.session))
+admin.add_view(EventView(Post, db.session))
+admin.add_view(ClickView(SponsorClick, db.session))
+admin.add_view(LogoutView(name='Logout', endpoint='logout'))
+
+if __name__ == "__main__":
     application.run(debug=True)
