@@ -37,6 +37,8 @@ class LogoutView(BaseView):
 
 class EventView(ModelView):
     form = PostForm
+    column_editable_list = ['title', 'date', 'content_body', 'content_body_post',
+                            'alt',  'hours', 'address_url', 'address', 'vendors_needed']
 
     def on_model_change(self, form, model, is_created):
         if is_created:

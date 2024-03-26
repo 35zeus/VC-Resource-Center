@@ -16,14 +16,14 @@ class UserForm(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
-    date = DateField('Date')
-    content_body = TextAreaField('Content Body', validators=[DataRequired()])
-    content_body_post = TextAreaField('Content Body Post', validators=[DataRequired()])
+    date = DateField('Date', validators=[DataRequired()])
+    content_body = TextAreaField('Content Body')
+    content_body_post = TextAreaField('Content Body Post')
     image = FileField('Image', validators=[DataRequired()])
     alt = StringField('Alt', validators=[DataRequired()])
-    hours = StringField('Hours', validators=[DataRequired()])
-    address_url = StringField('Address URL', validators=[DataRequired()])
-    address = StringField('Address', validators=[DataRequired()])
+    hours = StringField('Hours')
+    address_url = StringField('Address URL')
+    address = StringField('Address')
     vendors_needed = RadioField(
         label='Vendors Needed',
         validators=[DataRequired()],

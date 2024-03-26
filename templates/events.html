@@ -5,9 +5,9 @@
 {% block tab2 %}<li class="active">{% endblock %}
 
 {% block content %}
-	{% for event in events %}
 	<!-- Posts -->
 		<section class="posts">
+			{% for event in events %}
 			<article>
 				<header>
 					<span class="date">{{ event.pretty_date }}</span>
@@ -21,9 +21,4 @@
 			</article>
 		{% endfor %}
 		</section>
-		{% if session.admin %}
-		<section>
-			<p>You are the admin</p>
-		</section>
-		{% endif %}
 {% endblock %}
