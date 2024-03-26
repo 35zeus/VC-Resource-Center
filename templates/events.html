@@ -16,7 +16,7 @@
 				<a class="image fit"><img src="{{ event.image }}" alt="{{ event.alt }}" /></a>
 				<p>{{ event.content_body }}</p>
 				<ul class="actions special">
-					<li><a href="{{ url_for('get_full_post', id_num=event.post_id) }}" class="button">Full Post</a></li>
+					<li><a href="{{ url_for('get_full_post', id=event.id) }}" class="button">Full Post</a></li>
 				</ul>
 			</article>
 		{% endfor %}

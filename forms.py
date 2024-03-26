@@ -5,7 +5,6 @@ from wtforms import (
 )
 from wtforms.validators import InputRequired, ValidationError, DataRequired
 from werkzeug.security import check_password_hash
-from extensions import db
 from models import User
 
 

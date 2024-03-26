@@ -38,12 +38,8 @@ def events():
 # gets the post selected data and displays it as a full page
 @application.route('/post')
 def get_full_post():
-    id_num = int(request.args["id_num"])
-    post_data = None
-
-    for event in Post.query.all():
-        if event["post_id"] == id_num:
-            post_data = event
+    id_num = int(request.args["id"])
+    post_data = db.get_or_404(Post, id_num)
 
     return render_template(
         template_name_or_list='full-post.html',

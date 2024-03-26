@@ -5,13 +5,13 @@
 
 {% block content %}
 	<!-- Post -->
-		<section class="post">
+		<section class="post featured">
 			<h1 style="text-align:center;">{{ post_data.title }}</h1>
-			<div class="image post"><img src="{{ post_data.image }}" alt="{{ post_data.alt }}" /></div>
+			<div class="image main"><img src="{{ post_data.image }}" alt="{{ post_data.alt }}" /></div>
 			<p>{{ post_data.content_body_post }}<br>
 			<b>When:</b> {{ post_data.hours }}<br>
 			<b>Where:</b> <a href="{{ post_data.address_url }}" target="_blank" rel="noopener noreferrer">{{ post_data.address }}</a></p>
-			{% if post_data.vendors_needed %}
+			{% if post_data.vendors_needed == "True" %}
 			    <p>If you are a vendor, please download the following file and read the contents for full information.</p>
 			    <a href="{{ url_for('static', filename=post_data.vendor_files) }}" download="Vendor Files" class="button">Download</a>
 			{% endif %}
