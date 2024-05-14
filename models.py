@@ -18,7 +18,11 @@ class Post(db.Model):
     address_url = db.Column(db.String)
     address = db.Column(db.String)
     vendors_needed = db.Column(db.String, nullable=False)
-    vendor_files = db.Column(db.String, nullable=False, default="images/Event-12-9-23.zip")
+    vendor_files = db.Column(
+        db.String,
+        nullable=False,
+        default="documents/Ventura County Resource Center Vendor application rev.2 (1).pdf"
+    )
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date}')"

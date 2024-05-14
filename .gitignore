@@ -4,7 +4,7 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 !.gitignore
-./__pycache__
+__pycache__
 !.ebignore
 !.env
 sponsor-tracks.csv
