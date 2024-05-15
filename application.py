@@ -69,9 +69,9 @@ def newsletter_signup():
     return redirect('/')
 
 
-@application.route('/sponsors')
-def sponsors_page():
-    return render_template('sponsors.html')
+@application.route('/paid-advertisers')
+def paid_advertisers_page():
+    return render_template('advertisers.html')
 
 
 @application.route('/about-us')
@@ -112,8 +112,8 @@ def get_form_sent():
     return application.redirect('/contact-success')
 
 
-@application.get('/sponsors-tracking')
-def sponsors_tracking():
+@application.get('/advertisers-tracking')
+def advertisers_tracking():
     href = links[request.args["name"]]
     sponsor_click = SponsorClick(sponsor_link=href)
     db.session.add(sponsor_click)

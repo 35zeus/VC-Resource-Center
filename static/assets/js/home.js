@@ -17,7 +17,7 @@ const imageSources = [
 
 function cycleSponsorLogos() {
     const randomLogo = imageSources[Math.floor(Math.random() * imageSources.length)];
-    const sponsorImage = document.getElementById("sponsor");
+    const sponsorImage = document.getElementById("paid-advertisers");
     sponsorImage.setAttribute("src", randomLogo);
     setTimeout(cycleSponsorLogos, 5000);
 };

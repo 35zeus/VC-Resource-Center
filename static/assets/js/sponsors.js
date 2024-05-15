@@ -23,7 +23,7 @@ function renderSponsors() {
     sponsors.forEach(sponsor => {
         const sponsorElement = document.createElement("a");
         sponsorElement.classList.add("image", "fit");
-        sponsorElement.href = "/sponsors-tracking" + "?name=" + sponsor.name;
+        sponsorElement.href = "/advertisers-tracking" + "?name=" + sponsor.name;
         sponsorElement.target = "_blank";
 
         const logoElement = document.createElement("img");
