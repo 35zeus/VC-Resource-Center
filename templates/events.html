@@ -8,6 +8,7 @@
 	<!-- Posts -->
 		<section class="posts">
 			{% for event in events %}
+			{% if event.date >= today %}
 			<article>
 				<header>
 					<span class="date">{{ event.pretty_date }}</span>
@@ -19,6 +20,7 @@
 					<li><a href="{{ url_for('get_full_post', id=event.id) }}" class="button">Full Post</a></li>
 				</ul>
 			</article>
+			{% endif %}
 		{% endfor %}
 		</section>
 {% endblock %}

@@ -6,6 +6,9 @@ from flask import redirect, url_for
 from forms import LoginForm, PostForm
 from extensions import db, BUCKET
 from utils import upload_file_to_s3
+import pdf2image
+from PIL import Image
+from tempfile import TemporaryFile
 
 
 class CustomIndexView(AdminIndexView):
@@ -38,18 +41,28 @@ class LogoutView(BaseView):
 class EventView(ModelView):
     form = PostForm
     column_editable_list = ['title', 'date', 'content_body', 'content_body_post',
-                            'alt',  'hours', 'address_url', 'address', 'vendors_needed']
+                            'alt',  'hours', 'address_url', 'address', 'vendors_needed', 'vendor_files']
 
     def on_model_change(self, form, model, is_created):
-        if is_created:
-            file = form.image.data
-            filename = file.filename
-            model.pretty_date = model.date.strftime('%B %d, %Y')
-            model.image = upload_file_to_s3(file=file, bucket=BUCKET, key=f'website-pictures/{filename}')
-            if model.pretty_date and model.image:
-                db.session.commit()
-            else:
-                print("Didn't work.")
+        if not is_created:
+            return
+        model.pretty_date = model.date.strftime('%B %d, %Y')
+        file = form.image.data
+        image = (
+            pdf2image.convert_from_bytes(file.read())[0]
+            if file.mimetype == "application/pdf"
+            else Image.open(file)
+        )
+        image.resize((300, 400))
+        temp = TemporaryFile()
+        image.save(temp, "PNG")
+        temp.seek(0)
+        model.image = upload_file_to_s3(file=temp, bucket=BUCKET, key=f'website-pictures/{file.filename}')
+        temp.close()
+        if model.pretty_date and model.image:
+            db.session.commit()
+        else:
+            print("Didn't work.")
 
     def is_accessible(self):
         return current_user.is_authenticated

@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect, send_from_directory
-from datetime import date
+from datetime import datetime, date
 from extensions import db, mod_email, links
 from utils import email_message, init_login
 from flask_admin import Admin
 from models import User, Post, SponsorClick
 from views import UserView, EventView, CustomIndexView, LogoutView, ClickView
 from config import Config
+from sqlalchemy import asc
 
 application = Flask(__name__)
 application.config.from_object(Config)
@@ -30,8 +31,8 @@ def events():
     return render_template(
         template_name_or_list="events.html",
         current_year=date.today().year,
-        events=Post.query.all(),
-        today=date.today()
+        events=Post.query.order_by(asc(Post.date)).all(),
+        today=datetime.now()
     )
 
 
