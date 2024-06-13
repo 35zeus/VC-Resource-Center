@@ -14,6 +14,9 @@ const sponsors = [
     { name: "Oxnard Family Circle", logoSrc: prefix + "oxnard_family_circle_logo.jpeg" },
     { name: "Zion Living World Ministries", logoSrc: prefix + "zion_logo.jpeg" },
     { name: "Miracle Center of Ventura", logoSrc: prefix + "miracle_center_logo.jpeg" },
+    { name: "California Rural Legal Assistance, Inc.", logoSrc: prefix + "crla_logo.png"},
+    { name: "Kids and Families Together", logoSrc: prefix + "kft-logo-2018-hometab-980x400.jpg"},
+    { name: "Point of Love Foundation", logoSrc: prefix + "point_of_love.png"}
 ];
 
 // Function to create sponsor elements and append them to the container

@@ -22,5 +22,8 @@ links = {
         "Oxnard Family Circle": "https://oxnardfamilycircle.com/",
         "Zion Living World Ministries": "https://zlwm.org/",
         "Miracle Center of Ventura": "https://www.miraclecenterventura.org/",
+        "California Rural Legal Assistance, Inc.": "https://crla.org/locations/oxnard",
+        "Kids and Families Together": "https://www.kidsandfamilies.org/",
+        "Point of Love Foundation": "https://www.pointoflove.org/gallery",
     }
 
