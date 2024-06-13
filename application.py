@@ -13,9 +13,6 @@ application.config.from_object(Config)
 init_login(application)
 db.init_app(application)
 
-with application.app_context():
-    db.create_all()
-
 
 # renders the landing page with the event's data. It will exclude all events that precede the current date.
 @application.route('/')
@@ -140,4 +137,6 @@ admin.add_view(ClickView(SponsorClick, db.session))
 admin.add_view(LogoutView(name='Logout', endpoint='logout'))
 
 if __name__ == "__main__":
-    application.run(debug=True)
+    with application.app_context():
+        db.create_all()
+    application.run()

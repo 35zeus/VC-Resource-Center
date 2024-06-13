@@ -33,7 +33,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
           ssh $PA_USERNAME@ssh.pythonanywhere.com <<EOF
-          cd /home/$PA_USERNAME/VC-Resource-Website
+          cd /home/$PA_USERNAME/VC-Resource-Center
           git pull origin master
           workon .venv-3.10
           pip install -r requirements.txt
