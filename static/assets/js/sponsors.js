@@ -17,6 +17,7 @@ const sponsors = [
     { name: "New Directions", logoSrc: prefix + "new_directions_logo.jpeg" },
     { name: "Zion Living World Ministries", logoSrc: prefix + "zion_logo.jpeg" },
     { name: "Miracle Center of Ventura", logoSrc: prefix + "miracle_center_logo.jpeg" },
+    { name: "James Storehouse", logoSrc: prefix + "JSH_Blue.png"},
 ];
 
 // Function to create sponsor elements and append them to the container

@@ -25,5 +25,6 @@ links = {
         "California Rural Legal Assistance, Inc.": "https://crla.org/locations/oxnard",
         "Kids and Families Together": "https://www.kidsandfamilies.org/",
         "Point of Love Foundation": "https://www.pointoflove.org/gallery",
+        "James Storehouse": "https://www.jamesstorehouse.org/",
     }
 
