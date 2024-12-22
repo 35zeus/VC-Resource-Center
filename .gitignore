@@ -17,3 +17,4 @@ venv
 .idea
 diagrams/
 __pycache__/
+.venv
