@@ -1,22 +1,12 @@
 import os
 
 from flask_sqlalchemy import SQLAlchemy
-# import sshtunnel
 
 mod_email_password = os.getenv("MOD_EMAIL_PASSWORD")
 mod_email = os.getenv("MOD_EMAIL")
 recipient_email = os.getenv("RECIPIENT_EMAIL")
 BUCKET = os.getenv("S3_BUCKET")
 ssh_password = os.getenv("SSH_PASSWORD")
-# sshtunnel.SSH_TIMEOUT = 10.0
-# sshtunnel.TUNNEL_TIMEOUT = 10.0
-
-# with sshtunnel.SSHTunnelForwarder(
-#     ("ssh.pythonanywhere.com"),
-#     ssh_username="vcresourcecenter",
-#     ssh_password=ssh_password,
-#     remote_bind_address=("vcresourcecenter.mysql.pythonanywhere-services.com", 3306),
-# ) as tunnel:
 db = SQLAlchemy()
 
 links = {
